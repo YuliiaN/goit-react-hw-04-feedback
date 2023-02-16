@@ -11,22 +11,9 @@ export const App = () => {
   const reviews = Object.keys({ good, neutral, bad });
 
   const handleIncrement = mark => {
-    switch (mark) {
-      case 'good':
-        setGood(prevState => prevState + 1);
-        break;
-
-      case 'neutral':
-        setNeutral(prevState => prevState + 1);
-        break;
-
-      case 'bad':
-        setBad(prevState => prevState + 1);
-        break;
-
-      default:
-        return;
-    }
+    if (mark === 'good') setGood(prevState => prevState + 1);
+    if (mark === 'neutral') setNeutral(prevState => prevState + 1);
+    if (mark === 'bad') setBad(prevState => prevState + 1);
   };
 
   const countTotalFeedback = () => good + neutral + bad;
